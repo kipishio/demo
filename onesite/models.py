@@ -21,4 +21,4 @@ class Onesite_Demo(models.Model):
     def __unicode__(self):
         return self.onesitedemo_titel
 
-# приететтт
+# приететттпппппп
