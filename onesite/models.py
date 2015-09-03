@@ -12,12 +12,15 @@ class Onesite_Demo(models.Model):
         db_table = 'app_onesite_demo'
         # Задаем как будет подписана таблица в реале
         verbose_name='Одиночный сайт'
+        # Задаем как будет подписана таблица в реале в множественном числе
+        verbose_name_plural = "Одиночные сайты"
     # создаем поля таблицы в базе данных
     onesitedemo_titel = models.CharField(max_length=200,verbose_name='Заголовок')
     onesitedemo_text = models.TextField(verbose_name='Текст', blank=True, null=True)
     onesitedemo_date = models.DateTimeField(verbose_name='Дата')
     onesitedemo_text1 = models.TextField(verbose_name='Текст1', blank=True, null=True)
 
+    # функция возвращает название описание таблицы от поля onesitedemo_titel
     def __unicode__(self):
         return self.onesitedemo_titel
 
