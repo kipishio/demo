@@ -7,6 +7,6 @@ urlpatterns = patterns('',
     # Examples:
     # onesite
 
-    url(r'^all/$', one_site_all ),
+    url(r'^all/$', one_site_all),
 
 )

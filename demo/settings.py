@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+# указываем путь который везде будем езать это основная аппка в которой лежит проект D:\General\DjangoProject\demo
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -18,6 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# секретный ключ для работы сайта
 SECRET_KEY = 'yyz5p2&m5a4nxjnkgk&kwv!hf-kph%=b2!@e(p&i222d03^s9-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -57,7 +59,7 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
+# указываем название базы данных и параметры подключения и прочее
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -81,13 +83,34 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-# название  папак которые будут сздаваться для статических файлов, в папках с таким именем джанго будет искать статические файлы
+# название  папак которые будут сздаваться для статических файлов, в папках с таким именем джанго будет искать
+# статические файлы
 STATIC_URL = '/static/'
-#указываем папку куда будут собираться статические файлы проекта
-STATIC_ROOT = 'E:\django\project\demo\static'
 
-TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
-# находит статические файлы
+# указываем папку куда будут собираться статические файлы проекта
+# должен получиться адрес такой 'D:/General/DjangoProject/demo/static'
+STATIC_ROOT = (os.path.join(BASE_DIR, 'static'))
+
+print('_______________')
+print(STATIC_ROOT)
+#  пути к папкам с шаблонами, на сервере если не указать будет ошибка
+# примерно такие пути должны быть 'D:/General/DjangoProject/demo\\templates' и
+# 'D:/General/DjangoProject/demo\\onesite/templates'
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,  'templates'),
+    os.path.join(BASE_DIR, 'onesite/templates'),
+)
+print(TEMPLATE_DIRS)
+
+#  порядок поиска шаблонов
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader'
+)
+
+print(TEMPLATE_LOADERS)
+
+# находит статические файлы данная функция
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
