@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block media_all %}
+    {% for to in to_media_all %}
+        {{ to.mediademo_tema }}<br>
+        {{ to.mediademo_text }}<br>
+        {{ to.mediademo_date }} <br> <br>
+    {% endfor %}
+{% endblock %}
+
+
+

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block programmingforum %}
+    {% for to in programmingforu %}
+        {{ to.programmingforum_tema }}<br>
+        {{ to.programmingforum_text }}<br>
+        {{ to.programmingforum_date }} <br> <br>
+    {% endfor %}
+{% endblock %}

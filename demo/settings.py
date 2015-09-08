@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 Django settings for demo project.
 
@@ -40,6 +40,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'onesite',
+    'info',
+    'media',
+    'programming',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -97,8 +100,9 @@ print(STATIC_ROOT)
 # примерно такие пути должны быть 'D:/General/DjangoProject/demo\\templates' и
 # 'D:/General/DjangoProject/demo\\onesite/templates'
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,  'templates'),
+    os.path.join(BASE_DIR, 'templates'),
     os.path.join(BASE_DIR, 'onesite/templates'),
+    os.path.join(BASE_DIR, 'info/templates'),
 )
 print(TEMPLATE_DIRS)
 

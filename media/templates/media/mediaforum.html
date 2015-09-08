@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block mediaforum %}
+    {% for to in to_mediaforum_all %}
+        {{ to.mediaforumdemo_tema }}<br>
+        {{ to.mediaforumdemo_text }}<br>
+        {{ to.mediaforumdemo_date }} <br> <br>
+    {% endfor %}
+{% endblock %}
+
