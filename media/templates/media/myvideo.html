@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block myvideo %}
+    {% for to in to_myvideo_all %}
+        {{ to.myvideodemo_tema }}<br>
+        {{ to.myvideodemo_text }}<br>
+        {{ to.myvideodemo_date }} <br> <br>
+    {% endfor %}
+
+{% endblock %}
+
+

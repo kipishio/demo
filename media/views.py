@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response
-from  media.models import MediaForumDemo, MediaDemo
+from  media.models import MediaForumDemo, MediaDemo, MyAudio, MyVideo
 
 
 def index(request):
@@ -20,3 +20,13 @@ def mediaforum_all(reques):
     return render_to_response('media/mediaforum.html', {'to_mediaforum_all': to_mediaforum_all})
 
 
+def myaudio_all(reques):
+    # название модели.менеджер.что вывести
+    to_myaudio_all = MyAudio.objects.all()
+    return render_to_response('media/myaudio.html', {'to_myaudio_all': to_myaudio_all})
+
+
+def myvideo_all(reques):
+    # название модели.менеджер.что вывести
+    to_myvideo_all = MyVideo.objects.all()
+    return render_to_response('media/myvideo.html', {'to_myvideo_all': to_myvideo_all})

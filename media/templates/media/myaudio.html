@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+{% block myaudio %}
+    {% for to in to_myaudio_all %}
+        {{ to.myaudiodemo_tema }}<br>
+        {{ to.myaudiodemo_text }}<br>
+        {{ to.myaudiodemo_date }} <br> <br>
+    {% endfor %}
+
+{% endblock %}
+
