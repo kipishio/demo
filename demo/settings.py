@@ -107,11 +107,11 @@ TEMPLATE_DIRS = (
 print(TEMPLATE_DIRS)
 
 #  порядок поиска шаблонов
+
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader'
 )
-
 print(TEMPLATE_LOADERS)
 
 # находит статические файлы данная функция
