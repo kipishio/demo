@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'info',
     'media',
     'programming',
+    'myforms',
 )
 
 MIDDLEWARE_CLASSES = (
