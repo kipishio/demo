@@ -10,5 +10,6 @@ urlpatterns = patterns('',
                        url(r'^info/', include('info.urls')),
                        url(r'^media/', include('media.urls')),
                        url(r'^programming/', include('programming.urls')),
+                       url(r'^forms/', include('myforms.urls')),
                        url(r'^$', index),
                        )
