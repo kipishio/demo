@@ -6,16 +6,14 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, render
 
 
-def myname(reqvest):
-    if reqvest.method == 'POST':
-        form = MyNameForm(reqvest.POST)
+def myname(request):
+    if request.method == 'POST':
+        form = MyNameForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('ссылка')
+            return HttpResponseRedirect('/forms/')
 
     else:
         form = MyNameForm()
-    return render('forms.html', {'form': 'dddddddddddd'})
+    return render(request, 'forms/forms.html', {'form': form})
 
 
-def mynametest(reqvest):
-    return render_to_response('forms/forms.html', {'form': 'dddddddddddd'})
