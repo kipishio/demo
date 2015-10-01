@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, render
 
 
+# получаем форму после нажатия
 def myname(request):
     if request.method == 'POST':
         form = MyNameForm(request.POST)
@@ -15,5 +16,3 @@ def myname(request):
     else:
         form = MyNameForm()
     return render(request, 'forms/forms.html', {'form': form})
-
-
